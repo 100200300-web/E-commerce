@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.title {
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+
+.active {
+    @apply text-cyan-600
+}
+
+.btn {
+    @apply text-white bg-cyan-600 rounded-lg
+}
+
+.boxshadow:hover {
+    transition: all .5s;
+    box-shadow: #0891b2 0px 3px 15px 0px;
+}
