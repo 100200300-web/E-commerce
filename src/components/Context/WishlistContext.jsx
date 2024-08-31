@@ -66,6 +66,7 @@ export default function WishlistContextProvider({ children }) {
     <WishlistContext.Provider
       value={{
         addToWishlist,
+        getWishlistItems,
         numOfItemOfWishlist,
         wishlistProducts,
         wishlistItems,

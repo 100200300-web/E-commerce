@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { initFlowbite } from "flowbite";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authContext } from "../Context/AuthContext";
@@ -8,9 +8,12 @@ import Logo from "../../assets/shopping-cart.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const { numberOfCartItems } = useContext(cartContext);
+  const { numberOfCartItems} = useContext(cartContext);
   const { token, setToken } = useContext(authContext);
-  const { numOfItemOfWishlist } = useContext(WishlistContext);
+  const { numOfItemOfWishlist,getWishlistItems } = useContext(WishlistContext);
+  useEffect(() => {
+    getWishlistItems();
+  }, []);
   function handleLogout() {
     localStorage.removeItem("token");
     setToken(null);
